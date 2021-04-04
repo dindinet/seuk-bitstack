@@ -4,7 +4,5 @@ sass sass/main.scss static/assets/css/main$1.css
 let "a = $1 - 1"
 oldfile="main[0-9]*.css"
 newfile="main$1.css"
-#echo $oldfile
-#echo $newfile
 sed -i "s@$oldfile@$newfile@" layouts/_default/baseof.html
 ls static/assets/css/
