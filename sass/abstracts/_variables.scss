@@ -1,0 +1,91 @@
+// Colors
+// SembcorpAEnergy Colours
+$color-se-dark-green:          #007c5a !default;
+$color-se-dark-orange:         #FF6600 !default;
+$color-se-dark-blue:           #0099FF !default;
+$color-se-dark-grey:           #717074 !default;
+$color-se-light-grey:          #A1A0A4 !default;
+$color-se-pastel-green:        #569487 !default;
+$color-se-pastel-blue:         #4BB6FF !default;
+$color-se-pastel-orange:       #FF944B !default;
+$color-se-pastel-red:          #BB4B61 !default;
+$color-se-pastel-navy:         #145299 !default;
+// Base
+$color-text:                   #536171 !default;
+$color-heading:                #536171 !default;
+$color-meta:                   #8594a5 !default;
+$color-bg:                     #eeeeee !default;
+$color-bg-alt:                 #f5f6f7 !default;
+$color-bg-overlay:             rgba(245,246,247,.8) !default;
+$color-border:                 #e1e4e9 !default;
+$color-white:                  #ffffff !default;
+
+// Links
+$color-link:                   $color-se-dark-green;
+
+// Blockquotes
+$color-blockquote:             #282f36 !default;
+$color-blockquote-border:      $color-se-dark-green;
+
+// Buttons
+$color-btn:                    #fff !default;
+$color-btn-bg:                 $color-se-dark-green;
+$color-btn-border:             $color-se-dark-green;
+$color-btn-alt:                $color-se-dark-green;
+$color-btn-alt-bg:             transparent !default;
+$color-btn-alt-border:         $color-se-dark-green;
+$color-btn-clear:              #282f36 !default;
+
+// Navigation
+$color-nav-link:               #536171 !default;
+$color-nav-link-hover:         $color-se-dark-green;
+$color-nav-link-active:        $color-se-dark-green;
+
+// Inverse (light text on dark background)
+$color-inverse-text:           #f5f6f7 !default;
+$color-inverse-heading:        #fff !default;
+$color-inverse-bg:             rgb(86,148,135) !default;
+$color-inverse-link:           #f5f6f7 !default;
+$color-inverse-btn:            #fff !default;
+$color-inverse-btn-bg:         $color-se-dark-green;
+$color-inverse-btn-border:     $color-se-dark-green;
+$color-inverse-btn-alt:        $color-se-dark-green;
+$color-inverse-btn-alt-bg:     #fff !default;
+$color-inverse-btn-alt-border: #fff !default;
+$color-inverse-btn-clear:      #fff !default;
+
+
+// Shadows
+$box-shadow: 0 0 1em rgba(0,0,0,.08) !default;
+
+
+// Typography
+@font-face {
+  font-family: 'FrutigerLight';
+  src: url('https://res.cloudinary.com/seuk/raw/upload/v1598547701/fonts/FrutigerLight/81e3653a-53bd-49d9-a1f8-f924811b6f02.eot'); /* IE9 Compat Modes */
+  src: url('https://res.cloudinary.com/seuk/raw/upload/v1598547701/fonts/FrutigerLight/81e3653a-53bd-49d9-a1f8-f924811b6f02.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://res.cloudinary.com/seuk/raw/upload/v1598547701/fonts/FrutigerLight/087d8a95-3f25-4bae-a1d1-db9ddffd72f5.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://res.cloudinary.com/seuk/raw/upload/v1598547701/fonts/FrutigerLight/ab1bcdf7-9570-4cba-a8e3-3e39ddd861db.woff') format('woff'), /* Pretty Modern Browsers */
+       url('https://res.cloudinary.com/seuk/raw/upload/v1598547701/fonts/FrutigerLight/83c94878-06c8-442c-a7df-d520b0ced00b.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('https://res.cloudinary.com/seuk/image/upload/v1598547701/fonts/FrutigerLight/29f3ff8a-1719-4e25-a757-53ee1a1114a5.svg.svg#29f3ff8a-1719-4e25-a757-53ee1a1114a#svgFontName') format('svg'); /* Legacy iOS */
+}
+$font-family-sans-serif: FrutigerLight,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans",Helvetica,sans-serif;
+$font-family-monospace:  Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+$font-family-base:       $font-family-sans-serif;
+
+
+// Widths
+$width-xs: 360px !default;
+$width-sm: 460px !default;
+$width-md: 740px !default;
+$width-lg: 1140px !default;
+
+
+// Breakpoints
+$media-breakpoints: (
+  xs: 480px,
+  sm: 640px,
+  md: 800px,
+  lg: 960px,
+  xl: 1200px
+) !default;

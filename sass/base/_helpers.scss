@@ -1,0 +1,118 @@
+/**
+ * Helper Classes
+ */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding-left: 1.125rem;
+  padding-right: 1.125rem;
+}
+
+.container--md {
+  max-width: $width-md;
+}
+
+.container--lg {
+  max-width: $width-lg;
+}
+
+.container--fw {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Headings */
+.h1 {
+  @extend h1;
+}
+
+.h2 {
+  @extend h2;
+}
+
+.h3 {
+  @extend h3;
+}
+
+.h4 {
+  @extend h4;
+}
+
+.h5 {
+  @extend h5;
+}
+
+.h6 {
+  @extend h6;
+}
+
+.intro{
+  
+  padding-bottom: 2em;
+}
+@include media-breakpoint-up(md) {
+  @include media-breakpoint-down(lg){
+    .intro{
+       padding-bottom: 1.5vw;
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .intro{
+  line-height: 1.6em;
+  padding-bottom: 1.5vw;
+  }
+}
+/* Text alignment */
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+/* Font Weight*/
+.font200{
+    font-weight: 200;
+    }
+.font400{
+    font-weight: 400;
+    }
+.font700{
+    font-weight: 700;
+    }
+.font900{
+    font-weight: 900;
+    }        
+/* Background image */
+.bg-image {
+  position: relative;
+}
+
+.bg-image__image {
+  background-position: center center;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-size: cover; 
+  background-repeat: no-repeat;
+}
+
+.hideme{display: none!important;}
+
+/* Text meant only for screen readers */
+.sr-only {
+  @include sr-only();
+}
+
+/* Clear floats */
+.clear {
+  @include clearfix();
+}

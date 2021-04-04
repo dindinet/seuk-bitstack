@@ -1,0 +1,53 @@
+{{ define "content" }}
+<section class="section hero bg-image dind-section--padding">
+  <div class="bg-image__image" style="background-image: url('{{ replace .Params.hero.heroimg "upload/" "upload/w_1665,q_auto,f_auto/" }}'); opacity: 1; background-size: cover; background-repeat: no-repeat"></div>
+  <div class="container container--lg">
+     <div class="flex flex--middle flex--center flex--col-2">
+      <div class="hero-heading">
+         <h1>{{ .Params.title }}</h1>
+        </div>
+     </div>
+  </div>
+</section>
+   <section class="section section--EMS">
+    <!--<div class="container container--md align-center">
+       <h2 class="section__title">{{ .Params.title }}</h2>
+    </div> -->
+    <div class="container container--lg">
+       <div class="font700 h4 intro">{{ .Params.intro }}</div>
+       <div class="flex flex--col-3">
+        {{ range .Params.services }}
+          <article class="cell">
+             <div class="card energy-market-service">
+                <div class="card__body">
+                   <header class="card__header">
+                      <h3 class="h4 card__title align-left">{{ .title}}</h3> <!-- <a href="{{ .url }}"> </a>-->
+                   </header>
+                 <div class="card__copy">
+                     <ul>
+                        {{ range .points }} 
+                        <li>{{ . }}</li>
+                        {{ end }}
+                     </ul>
+                     </div>
+                </div>
+             </div>
+          </article>
+        {{ end }}
+        <article class="cell">
+         <div class="card energy-market-service">
+            <div class="card__body">
+               <header class="card__header">
+                  <h3 class="h4 card__title align-left"><a href="/contact/">Find Out More</a></h3>
+               </header>
+             <div class="card__copy">
+                  Use the form on our <a href="/contact/">Contact Us</a> page
+                 </div>
+            </div>
+         </div>
+      </article>
+       </div>
+    </div>
+ </section>
+
+{{ end }}

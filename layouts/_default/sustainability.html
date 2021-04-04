@@ -1,0 +1,25 @@
+{{ define "content" }}
+<section class="section hero bg-image dind-section--padding">
+  <div class="bg-image__image" style="background-image: url('{{ replace .Params.heroimg "upload/" "upload/w_1665,q_auto,f_auto/" }}'); opacity: 1; background-size: cover; background-repeat: no-repeat"></div>
+  <div class="container container--lg">
+     <div class="flex flex--middle flex--center flex--col-2">
+      <div class="hero-heading">
+        <h1>{{ .Params.title }}</h1>
+       </div>
+     </div>
+  </div>
+</section>
+<article class="page">
+
+  <div class="container container--md">
+    <!--<header class="page__header">
+      <h1 class="page__title">{{ .Params.title }}</h1>
+    </header> -->
+    <div class="page__copy">
+      {{ .Content }}
+    </div>
+  </div>
+
+</article>
+{{ partial "seuk_sustainability_links.html" . }}
+{{ end }}

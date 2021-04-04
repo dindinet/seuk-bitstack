@@ -1,0 +1,32 @@
+{{ $thepage := replace .Dir "/" "" }}
+{{ $mypage := print "/" $thepage }}
+<section class="section section--seuksustainabilitylinks" >
+    <div class="container container--md" >
+        <p class="font700 h4 intro">{{ .Site.Data.sustainability.sustainability_links.intro }}</p>
+
+        
+        <div class="flex flex--col-2">
+            {{ range $.Site.Data.sustainability.sustainability_links.sustainabilitylinks }}
+            {{ if ne .url $mypage }}
+            <article class="cell align-left"> 
+                <a class="sustainabilitylink" href="{{ .url }}" url="{{ .url }}" thisdir="{{ $mypage }}">
+                  
+              <div class="card sustainabilitycard"> 
+                <div class="card__body">
+                   <header class="card__header">
+                      <p class="h6 card__title align-left">{{ .title }}</p>
+                   </header> 
+                   <!--<div class="card__copy">
+                     {{ .linktext }}
+                   </div> -->
+                </div> 
+              </div>
+              
+            </a>
+            </article>
+            {{ end }}
+            {{ end }}
+        </div>
+        <center><a class="sustainabilitylink" href="mailto:{{ .Site.Data.sustainability.sustainability_links.contactemail }}"><p class="btn">{{ .Site.Data.sustainability.sustainability_links.contactmessage }} {{ .Site.Data.sustainability.sustainability_links.contactemail }}</p></a></center>
+    </div>
+</section>

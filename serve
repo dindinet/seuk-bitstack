@@ -1,0 +1,2 @@
+#!/bin/bash
+../hugo/hugo serve --port=8080

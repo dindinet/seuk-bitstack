@@ -1,0 +1,31 @@
+{{ $thepage := replace .Dir "/" "" }}
+{{ $mypage := print "/" $thepage }}
+<section class="section section--seukcareersfooter" >
+    <div class="container container--md" >
+        <p class="font700 h4 intro">{{ .Site.Data.careers.career_links.careerlinksintro }}</p>
+
+        
+        <div class="flex flex--col-2">
+            {{ range $.Site.Data.careers.career_links.careerlinks }}
+            {{ if ne .url $mypage }}
+            <article class="cell align-left"> 
+                <a class="careerlink" href="{{ .url }}">
+              <div class="card careercard"> 
+                <div class="card__body">
+                   <header class="card__header">
+                      <p class="h6 card__title align-left">{{ .title }}</p>
+                   </header> 
+                   <!--<div class="card__copy">
+                     {{ .linktext }}
+                   </div>-->
+                </div> 
+              </div>
+            </a>
+            </article>
+            {{ end }}
+            {{ end }}
+        </div>
+        <center><a class="careerlink" href="mailto:{{ .Site.Data.careers.career_links.contactemail }}"><p class="btn">{{ .Site.Data.careers.career_links.contactmessage }} {{ .Site.Data.careers.career_links.contactemail }}</p></a></center>
+        
+    </div>
+</section>

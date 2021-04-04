@@ -1,0 +1,35 @@
+{{ define "content" }}
+<section class="section hero bg-image dind-section--padding">
+  <div class="bg-image__image" style="background-image: url('{{ replace .Params.heroimg "upload/" "upload/w_1665,q_auto,f_auto/" }}'); opacity: 1; background-size: cover; background-repeat: no-repeat"></div>
+  <div class="container container--lg">
+     <div class="flex flex--middle flex--center flex--col-2">
+      <div class="hero-heading">
+        <h1>{{ .Site.Data.resources.policiesandconditions.title }}</h1>
+       </div>
+     </div>
+  </div>
+</section>
+<section class="section section--generalconditions" >
+    <div class="container container--lg" >
+        <div class="flex flex--col-2">
+            {{ range $.Site.Data.resources.policiesandconditions.items }}
+            <article class="cell align-left"> 
+                <a href="{{ .url }}">
+              <div class="card generalconditions"> 
+                <div class="card__body">
+                   <!--<header class="card__header"> -->
+                    <img class="icon35 align-right"  src="/icons/{{ .icon}}.svg"/>
+                      <p class="h6 card__title align-left">{{ .title }}</p>
+                   <!--</header> -->
+                   <!--<div class="card__copy">
+                     <span></span><p>{{ .description }}</p>
+                   </div>-->
+                </div> 
+              </div>
+            </a>
+            </article>
+            {{ end }}
+        </div>        
+    </div>
+</section>
+{{ end }}

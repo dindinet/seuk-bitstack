@@ -1,0 +1,25 @@
+intro: "Find out more about Sembcorp Energy UK's Sustainability Goals:"
+contactmessage: "To find out more about sustainability please contact us by email:"
+contactemail: DL-GBR-CSR@sembcorp.com
+sustainabilitylinks:
+  - title: Our Commitment to Sustainability
+    text: Sembcorp Energy UK's commitment to sustainability
+    linktext: Learn More
+    url: /sustainability
+  - title: Embedding Responsible Business Practices
+    text: Sembcorp Energy UK's commitment to responsible business practices
+    linktext: Learn More
+    url: /embedding-responsible-business-practices
+  - title: Enabling a Low Carbon and Circular Economy
+    text: Sembcorp Energy UK's commitment to enabling a low carbon and circular
+      economy
+    linktext: Learn More
+    url: /enabling-a-low-carbon-and-circular-economy
+  - title: Empowering Our People and Communities
+    text: Sembcorp Energy UK's commitment to empowering our people and communities
+    linktext: Learn More
+    url: /empowering-our-people-and-communities
+  - title: Our Latest Community Activities
+    text: Sembcorp Energy UK's latest community activities
+    linktext: Learn More
+    url: /community-activities

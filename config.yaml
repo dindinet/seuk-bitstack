@@ -1,0 +1,128 @@
+title: Changing Energy Management to Ensure a Sustainable Future
+baseURL: /
+enableGitInfo: true
+summaryLength: 10
+paginate: 6
+params:
+  description: >-
+       Sembcorp Energy UK Provide Solutions for the UK Electricity Grid and Customers with Large Energy Demands
+  header:
+    type: header
+    title: Sembcorp Energy UK
+    has_nav: true
+    nav_links:
+      - type: action
+        label: Who We Are
+        url: /who-we-are/
+        style: link
+      - type: action
+        label: What We Do
+        url: /what-we-do/
+        style: link        
+      - type: action
+        label: Our Services
+        url: /services/
+        style: link
+        submenu:
+          - label: Overview
+            url: /services/        
+          - label: Energy Market Services
+            url: /energy-market-services/        
+      - style: link
+        new_window: false
+        type: action
+        label: Sustainability
+        url: /sustainability/
+        submenu:
+          - label: Overview
+            url: /sustainability/        
+          - label: A Responsible Business
+            url: /embedding-responsible-business-practices/
+          - label: Towards Net Zero
+            url: /enabling-a-low-carbon-and-circular-economy/
+          - label: People & Communities
+            url: /empowering-our-people-and-communities/
+          - label: Community Activities
+            url: /community-activities/                  
+      - style: link
+        new_window: false
+        type: action
+        label: Careers
+        url: /careers/
+        submenu:
+          - label: Overview
+            url: /careers/
+          - label: Available Jobs
+            url: /available-jobs/
+          - label: Graduates
+            url: /graduates/
+          - label: Apprenticeships
+            url: /apprenticeships/
+          - label: Work Experience
+            url: /work-experience/
+      - type: action
+        label: News & Insights
+        url: /blog/
+        style: link
+      - type: action
+        label: Contact Us
+        url: /contact/
+        style: primary
+    logo: https://res.cloudinary.com/seuk/image/upload/v1596707201/sembcorp-logo.svg
+  footer:
+    type: footer
+    has_nav: true
+    nav_links:
+      - type: action
+        label: Sembcorp Industries
+        url: https://www.sembcorp.com
+        style: link
+      - type: action
+        label: Wilton International
+        url: https://www.wiltoninternational.com
+        style: link
+    has_social: true
+    social_links:
+      - type: action
+        label: Twitter
+        url: https://twitter.com/SembcorpUK
+        style: link
+        new_window: true
+      - type: action
+        label: LinkedIn
+        url: https://www.linkedin.com/company/sembcorp-energy-uk/
+        style: link
+        new_window: true
+    content: "&copy; sembcorpenergy.co.uk. All rights reserved."
+    legal: >-
+      Sembcorp Energy UK is a trading name of Sembcorp Energy UK Limited (company no:11369893) and Sembcorp Utilities (UK) Limited
+      (company no: 04636301) whose registered office is at Sembcorp UK Headquarters, Wilton International, Middlesbrough, Cleveland,
+      TS90 8WS and of UK Power Reserve Limited (company no: 7385282), UK Capacity Reserve Limited (company no: 9152381), UK
+      Energy Reserve Limited (company no: 10260309) and UK Utility Reserve Limited (company no: 11008814), whose registered office is
+      at 6th Floor, Radcliffe House, Blenheim Court, Solihull, B91 2AA.
+    links:
+
+
+disableKinds:
+# - RSS
+  - taxonomy
+  - taxonomyTerm
+
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false

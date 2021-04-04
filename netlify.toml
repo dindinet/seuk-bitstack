@@ -1,0 +1,32 @@
+[build]
+  command = "hugo"
+  publish = "public"
+
+#[build.environment]
+ # YARN_VERSION = "1.12.1"
+  #NPM_VERSION = "6.4.1"
+
+#[context.deploy-preview]
+  #command = "yarn build:preview"
+  
+#[context.deploy-CMSTemplates]
+# command = "yarn build:CMSTemplates"
+
+#[[redirects]]
+#from = "*/sustainability"
+#to = "/"
+#status = 301
+#force = true
+#[[redirects]]
+#from = "*/careers"
+#to = "/"
+#status = 301
+#force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "no-referrer"
+    X-Content-Type-Options = "nosniff"

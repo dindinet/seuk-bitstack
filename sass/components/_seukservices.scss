@@ -1,0 +1,24 @@
+
+.card.Services, .card.Sustainability, .card.Careers {position: relative;}
+.overlay {position: absolute;top: 0;height: 100%;width: 100%;opacity: 0;transition: .5s ease; pointer-events:none;}
+.overlay a{pointer-events: auto;}
+.card.Services .overlay{background-color: #D7F3FF;} .card.Sustainability .overlay{background-color:#A8CCC5;} .card.Careers .overlay {background-color: #FEDCC5;}
+.card.Services header.card__header, .card.Sustainability header.card__header, .card.Careers header.card__header{padding: 1.25rem;}
+.card.Services:hover .overlay, .card.Sustainability:hover .overlay, .card.Careers:hover .overlay {opacity: 0.95;}
+.overlay .card__body p{font-size: 5vw;}
+.overlay a.btn {position: absolute; bottom: 1.25rem;}
+.card.Services .overlay a.btn {background-color: #0099FF; border: 2px solid #4BB6FF;}
+.card.Sustainability .overlay a.btn {background-color: #007c5a; border: 2px solid #569487;}
+.card.Careers .overlay a.btn {background-color: #FF6600; border: 2px solid #FF944B;}
+
+@include media-breakpoint-up(md) {
+     @include media-breakpoint-down(lg){
+       .overlay .card__body p{font-size: 1.8vw;}
+     }
+}
+@include media-breakpoint-up(lg) {
+    .overlay .card__body p{font-size: 1.2vw;}
+}
+@include media-breakpoint-up(xl) {
+  .overlay .card__body p{font-size: 1vw;}
+}

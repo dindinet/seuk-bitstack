@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="container container--lg">
+
+    
+
+    <div class="site-footer__copyright">
+      {{ if .Site.Params.footer.content }}
+        {{ $.Site.Params.footer.content | safeHTML }}
+        <p><sub>{{ $.Site.Params.footer.legal | safeHTML }}</sub></p>
+      {{ end }}
+      {{ range $action := .Site.Params.footer.links }}
+        {{ $include_dict := dict "action" $action }}
+        {{ partial "action.html" $include_dict }}
+      {{ end }}
+    </div>
+
+  </div>
+</footer>

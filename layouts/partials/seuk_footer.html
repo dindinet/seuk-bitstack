@@ -1,0 +1,26 @@
+
+<section class="section section--seukfooter" >
+      <!--<div class="container container--md align-center">
+         <h2 class="section__title">Connections</h2>
+      </div> -->
+      <div class="container container--lg" >
+         <div class="flex flex--col-3">
+            
+            {{ range $.Site.Data.resources.connections.sections }}
+
+            <article class="cell align-center"> 
+                <img class="icon35" src="/icons/{{ .icon}}.svg"/>
+                <h5>{{ .title }}</h5>
+
+                <div class="resourcegridoriginal align-left">
+                  {{ range ( .items) }}                  
+                  <span class="resourcegridicon"><a href='{{ if in .icon "download" }}/pdfs/{{ .url }}{{else}}{{ .url }}{{ end }}' target="_blank"><img class="icon24" src="/icons/{{ .icon}}.svg"/></a></span>                           
+                  <span  class="capitalized font700 resourcegridtext"><a style="text-decoration:none;color:white;" href='{{ if in .icon "download" }}/pdfs/{{ .url }}{{else}}{{ .url }}{{ end }}' target="_blank">{{ .title }}</a></span>
+                  {{ end }} 
+               </div> 
+            </article>
+            {{ end }}
+
+         </div>
+      </div>
+   </section>

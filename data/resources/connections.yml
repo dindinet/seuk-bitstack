@@ -1,0 +1,23 @@
+sections:
+    - title: Group Websites 
+      icon: countries-w
+      items:
+        - icon: link-w
+          title: Sembcorp Industries
+          description: Find out about our parent company – a global, integrated energy business.
+          url: https://www.sembcorp.com/en/
+        - icon: link-w
+          title: Wilton International
+          description: Find out about our UK site solutions for energy-intensive businesses.
+          url: https://www.wiltoninternational.com/
+    - title: Social Media
+      icon: social-media-w
+      items:
+        - title: Linkedin
+          icon: linkedin
+          description: Follow us on LinkedIn for our latest News and Insights.
+          url: https://www.linkedin.com/company/sembcorp-energy-uk/   
+        - title: Twitter
+          icon: twitter
+          description: Follow us on Twitter for our latest News and Insights.
+          url: https://twitter.com/SembcorpUK          

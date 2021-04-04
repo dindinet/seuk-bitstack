@@ -1,0 +1,1338 @@
+backend:
+  name: github
+  repo: seuk-www/seuk
+  branch: dev
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: seuk
+    api_key: 873885784827685
+    username: sembcorpenergyuk@gmail.com
+    multiple: false
+publish_mode: editorial_workflow
+logo_url: https://res.cloudinary.com/seuk/image/upload/v1596707201/sembcorp-logo.svg
+#media_folder: site/static/images
+#public_folder: /images 
+collections:
+  - name: config
+    label: Site Configuration
+    files:
+      - name: config
+        label: Site Configuration
+        file: config.yaml
+        fields:
+          - name: title
+            label: Title
+            required: true
+            hint: Site title
+            widget: string
+          - name: baseURL
+            label: Base URL
+            required: false
+            hint: Hostname (and path) to the root
+            widget: hidden
+          - name: params
+            label: Params
+            required: true
+            hint: Site parameters
+            widget: object
+            fields:
+              - name: description
+                label: Site Description
+                required: false
+                hint: The default site description used in meta data.
+                widget: string
+              - name: header
+                label: Header Configuration
+                required: false
+                widget: object
+                fields:
+                  - widget: string
+                    name: title
+                    label: Header Title
+                    required: false
+                    hint: >-
+                      The title displayed in the header if logo image not
+                      specified
+                  - widget: image
+                    name: logo
+                    label: Logo
+                    required: false
+                    hint: The logo image displayed in the header
+                  - widget: boolean
+                    name: has_nav
+                    label: Enable Navigation Menu
+                    required: false
+                    default: true
+                    hint: Display the navigation menu bar in the header
+                  - widget: list
+                    name: nav_links
+                    label: Navigation Menu Links
+                    required: false
+                    hint: List of navigation links in header
+                    fields:
+                      - widget: string
+                        name: label
+                        label: Label
+                        required: true
+                      - widget: string
+                        name: url
+                        label: URL
+                        required: true
+                      - widget: select
+                        name: style
+                        label: Style
+                        required: true
+                        default: link
+                        options:
+                          - link
+                          - primary
+                          - secondary
+                      - widget: boolean
+                        name: new_window
+                        label: Open in new tab/window
+                        required: false
+                        default: false
+                      - widget: hidden
+                        name: type
+                        label: Object Type
+                        required: true
+                        hint: The type of the object
+                        default: action
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: header
+              - name: footer
+                label: Footer Configuration
+                required: false
+                widget: object
+                fields:
+                  - name: has_nav
+                    label: Enable Navigation Menu
+                    required: false
+                    default: true
+                    hint: Display the secondary navigation menu in the footer
+                    widget: boolean
+                  - name: nav_links
+                    label: Navigation Menu Links
+                    required: false
+                    hint: List of navigation links in footer
+                    widget: list
+                    fields:
+                      - name: label
+                        label: Label
+                        required: true
+                        widget: string
+                      - name: url
+                        label: URL
+                        required: true
+                        widget: string
+                      - name: style
+                        label: Style
+                        required: true
+                        default: link
+                        widget: select
+                        options:
+                          - link
+                          - primary
+                          - secondary
+                      - name: new_window
+                        label: Open in new tab/window
+                        required: false
+                        default: false
+                        widget: boolean
+                      - name: type
+                        label: Object Type
+                        required: true
+                        hint: The type of the object
+                        default: action
+                        widget: hidden
+                  - name: has_social
+                    label: Enable Social Links
+                    required: false
+                    default: true
+                    hint: Display social links in the footer
+                    widget: boolean
+                  - name: social_links
+                    label: Social Links
+                    required: false
+                    hint: The list of social links displayed in the footer
+                    widget: list
+                    fields:
+                      - name: label
+                        label: Label
+                        required: true
+                        widget: string
+                      - name: url
+                        label: URL
+                        required: true
+                        widget: string
+                      - name: style
+                        label: Style
+                        required: true
+                        widget: select
+                        default: link
+                        options:
+                          - link
+                          - primary
+                          - secondary
+                      - name: new_window
+                        label: Open in new tab/window
+                        required: false
+                        default: false
+                        widget: boolean
+                      - name: type
+                        label: Object Type
+                        required: true
+                        hint: The type of the object
+                        default: action
+                        widget: hidden
+                  - name: content
+                    label: Footer Content
+                    required: false
+                    hint: The copyright text displayed in the footer
+                    widget: string
+                  - name: links
+                    label: Links
+                    required: false
+                    hint: A list of links displayed in the footer
+                    widget: list
+                    fields:
+                      - name: label
+                        label: Label
+                        required: true
+                        widget: string
+                      - name: url
+                        label: URL
+                        required: true
+                        widget: string
+                      - name: style
+                        label: Style
+                        required: true
+                        default: link
+                        widget: select
+                        options:
+                          - link
+                          - primary
+                          - secondary
+                      - name: new_window
+                        label: Open in new tab/window
+                        required: false
+                        default: false
+                        widget: boolean
+                      - name: type
+                        label: Object Type
+                        required: true
+                        hint: The type of the object
+                        default: action
+                        widget: hidden
+                  - name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: footer
+                    widget: hidden
+          - name: taxonomies
+            label: Taxonomies
+            required: false
+            widget: hidden
+          - name: disableKinds
+            label: Disable Kinds
+            required: false
+            hint: Enable disabling of all pages of the specified Kinds.
+            widget: hidden
+          - name: uglyURLs
+            label: Ugly URLs
+            required: false
+            hint: >-
+              When enabled, creates URL of the form /filename.html instead of
+              /filename/.
+            widget: hidden
+  - name: person
+    label: Persons
+    folder: /data/team
+    format: json
+    extension: json    
+    create: true
+    identifier_field: id
+    slug: '{{slug}}'
+    fields:
+      - name: id
+        label: ID
+        required: true
+        hint: 'A unique identifier used when filtering posts, e.g. "john-doe"'
+        widget: string
+      - name: link
+        label: Link
+        required: false
+        hint: 'The link to the author page, e.g. "blog/author/john-doe"'
+        widget: string
+      - name: first_name
+        label: First Name
+        required: true
+        widget: string
+      - name: last_name
+        label: Last Name
+        required: false
+        widget: string
+      - name: photo
+        label: Photo
+        required: false
+        widget: image
+      - name: bio
+        label: Bio
+        required: false
+        widget: markdown
+      - name: type
+        label: Object Type
+        required: true
+        hint: The type of the object
+        default: person
+        widget: hidden
+  - name: category
+    label: Categories
+    folder: /data/categories
+    format: json
+    extension: json
+    create: true
+    identifier_field: title
+    slug: '{{slug}}'
+    fields:
+      - name: id
+        label: ID
+        required: true
+        hint: 'A unique identifier used when filtering posts, e.g. "news"'
+        widget: string
+      - name: link
+        label: Link
+        required: false
+        hint: 'The link to the category page, e.g. "blog/category/news"'
+        widget: string
+      - name: title
+        label: Title
+        required: true
+        widget: string
+      - name: type
+        label: Object Type
+        required: true
+        hint: The type of the object
+        default: category
+        widget: hidden
+  - name: careers
+    label: Careers Pages
+    files:
+      - file: "content/careers/index.md"
+        label: "Careers Page"
+        name: "careers"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}        
+      - file: "content/apprenticeships/index.md"
+        label: "Apprenticeships Page"
+        name: "apprenticeships"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/available-jobs/index.md"
+        label: "Available Jobs Page"
+        name: "availablejobs"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown} 
+      - file: "content/graduates/index.md"
+        label: "Graduates Page"
+        name: "graduates"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/work-experience/index.md"
+        label: "Work Experience Page"
+        name: "WorkExperience"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "/data/careers/career_links.yml"
+        label: "Careers Navigation Cards"
+        name: "CareersCards"
+        fields:
+          - name: intro
+            label: Intro text
+            required: true
+            widget: string        
+          - name: contactmessage
+            label: Message for CTA
+            required: true
+            hint: >-
+                 e.g. To learn more about careers with Sembcoorp Energy contact us by email:
+            widget: string
+          - name: contactemail
+            label: Contact email address for CTA
+            required: true
+            widget: string
+          - name: careerlinks
+            label: Cards
+            widget: "list"
+            fields:
+              - label: Card Title
+                name: title
+                widget: "string"
+              - label: Description
+                name: text
+                widget: "string"
+              - label: Link Text
+                name: linktext
+                widget: "string"
+              - label: Link URL
+                name: url
+                widget: "string"            
+  - name: sustainability
+    label: Sustainability Pages
+    files:
+      - file: "content/sustainability/index.md"
+        label: "Sustainability Page"
+        name: "sustainabiity"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/embedding-responsible-business-practices/index.md"
+        label: "Embedding responsible Business Practices Page"
+        name: "ResponsibleBusiness"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/empowering-our-people-and-communities/index.md"
+        label: "Empowering our People and Communities Page"
+        name: "PeopleandCommunities"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/enabling-a-low-carbon-and-circular-economy/index.md"
+        label: "Enabling a Low Carbon-and Circular Economy Page"
+        name: LowCarbonCircularEconomy
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/community-activities/index.md"
+        label: "Community Activities Page"
+        name: CommunityActivities
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}                   
+      - file: "/data/sustainability/sustainability_links.yml"
+        label: "Sustainability Navigation Cards"
+        name: "SustainabilityCards"
+        fields:
+          - name: intro
+            label: Intro text
+            required: true
+            widget: string        
+          - name: contactmessage
+            label: Message for CTA
+            required: true
+            hint: >-
+                 e.g. To learn more about sustainability contact us by email:
+            widget: string
+          - name: contactemail
+            label: Contact email address for CTA
+            required: true
+            widget: string
+          - name: sustainabilitylinks
+            label: Cards
+            widget: "list"
+            fields:
+              - label: Card Title
+                name: title
+                widget: "string"
+              - label: Description
+                name: text
+                widget: "string"
+              - label: Link Text
+                name: linktext
+                widget: "string"
+              - label: Link URL
+                name: url
+                widget: "string"
+  - name: page
+    label: SEUK Pages
+    files:
+      - file: "content/_index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - label: Title
+            name: title
+            required: true
+            hint: The title of the page
+            widget: string
+          - label: SubTitle 
+            name: subtitle
+            required: false
+            hint: The subtitle of the page
+            widget: string 
+          - label: SEO Description
+            name: description            
+            required: false
+            hint: The title of the page
+            widget: string
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - label: Hero Image
+                name: heroimg
+                required: true
+                widget: image
+                hint: The image at the top of the page
+              - label: Value Proposition
+                name: valprop
+                required: true
+                widget: string
+                hint: Sembcorp Energy UK value Proposition
+              - label: Learn More Link
+                name: learnmore
+                required: true
+                widget: string
+                hint: url of page to Learn More                
+          - label: SEUK Offer Cards
+            name: seukoffercards
+            widget: list
+            fields:
+              - label: Card Title
+                name: title
+                required: true
+                widget: string
+              - label: Card links to
+                name: url
+                required: true
+                widget: string
+              - label: Image for card
+                name: photo
+                required: true
+                widget: image
+              - label: Card text
+                name: blurb
+                required: true
+                widget: string                
+      - file: "content/who-we-are/index.md"
+        label: "Who We Are Page"
+        name: "whoweare"
+        fields:
+          - label: Title
+            name: title
+            required: true
+            hint: The title of the page
+            widget: string
+          - label: SubTitle 
+            name: subtitle
+            required: false
+            hint: The stitle of the page
+            widget: string 
+          - label: SEO Description
+            name: description            
+            required: false
+            hint: The title of the page
+            widget: string
+          - label: Hero Image
+            name: heroimg            
+            required: true
+            hint: The image at the top of the page
+            widget: image
+          - label: Type
+            name: type
+            required: true
+            default: who-we-are
+            widget: hidden
+          - name: body
+            label: Content
+            required: false
+            hint: Page content
+            widget: markdown
+      - file: "content/what-we-do/index.md"
+        label: "What We Do Page"
+        name: "whatwedo"
+        fields:
+          - label: Title
+            name: title
+            required: true
+            hint: The title of the page
+            widget: string
+          - label: SubTitle 
+            name: subtitle
+            required: false
+            hint: The stitle of the page
+            widget: string 
+          - label: SEO Description
+            name: description            
+            required: false
+            hint: The title of the page
+            widget: string
+          - label: Hero Image
+            name: heroimg            
+            required: true
+            hint: The image at the top of the page
+            widget: image
+          - label: Page Intro
+            name: intro            
+            required: true
+            hint: Highlighted Intro Paragraph
+            widget: text 
+          - label: Call to Action Text
+            name: ctaText
+            widget: string 
+          - label: Call to Action Link
+            name: ctaLink
+            widget: string           
+          - label: Type
+            name: type
+            required: true
+            default: what-we-do
+            widget: hidden
+          - label: We do
+            name: wedo
+            widget: list
+            fields:
+              - label: Heading
+                name: heading
+                required: true
+                widget: string
+              - label: We do description
+                name: text
+                required: true
+                widget: text
+              - label: We do Image
+                name: photo
+                required: true
+                widget: image
+              - label: Alternative text(Not compulsory)
+                hint:  Alternative text for We do Image seen by screen readers ans search engines
+                name: photo_alt
+                required: false
+                widget: string 
+              - label: We do Link(Not compulsory)
+                hint:  Where to send visitors
+                name: link
+                required: false
+                widget: string
+              - label: We do Link Text(Not compulsory)
+                hint:  Text for Green Button
+                name: linktext
+                required: false
+                widget: string                
+      - file: "content/services/index.md"
+        label: "Services Page"
+        name: "Services"
+        fields:
+          - label: Title
+            name: title
+            required: true
+            hint: The title of the page
+            widget: string
+          - label: SubTitle 
+            name: subtitle
+            required: false
+            hint: The stitle of the page
+            widget: string 
+          - label: SEO Description
+            name: description            
+            required: false
+            hint: The title of the page
+            widget: string
+          - label: Hero Image
+            name: heroimg            
+            required: true
+            hint: The image at the top of the page
+            widget: image
+          - label: Layout
+            name: layout
+            required: true
+            default: services
+            widget: hidden
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - label: Heading
+                name: heading
+                required: true
+                widget: string
+              - label: Service description
+                name: text
+                required: true
+                widget: text
+              - label: Service Image
+                name: photo
+                required: true
+                widget: image
+              - label: Alternative text(Not compulsory)
+                hint:  Alternative text for We do Image seen by screen readers ans search engines
+                name: photo_alt
+                required: false
+                widget: string 
+              - label: Service Link
+                hint:  Where to send visitors
+                name: link
+                required: true
+                widget: string 
+              - label: Service Link Text
+                hint:  Text to use for link
+                name: linktext
+                required: true
+                widget: string                                                                                
+  - name: post
+    label: News & Insights
+    folder: /content/blog
+    create: true
+    extension: md
+    identifier_field: title
+    slug: '{{slug}}'
+    fields:
+      - label: Title
+        name: title
+        required: true
+        hint: The title of the post
+        widget: string
+      - label: Date
+        name: date
+        required: true
+        hint: The publish date of the post
+        widget: date
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "person"
+        searchFields: ["id"]
+        displayFields: ["id"]
+        valueField: "id"
+      - name: categories
+        label: Categories
+        required: false
+        hint: The categories of the post
+        widget: list
+        field:
+          label: String
+          name: string
+          widget: string
+      - name: tags
+        label: Tags
+        required: false
+        hint: The tags of the post
+        widget: list
+        field:
+          label: String
+          name: string
+          widget: string
+      - name: image
+        label: Featured Image
+        required: false
+        hint: The image shown in the blog post and blog feed
+        widget: image
+      - name: description
+        label: SEO Description
+        required: false
+        hint: The excerpt of the page displayed in the blog feed and meta data
+        widget: string
+      - name: layout
+        label: Layout
+        required: true
+        default: post
+        widget: hidden
+      - name: type
+        label: Type
+        required: true
+        default: post
+        widget: hidden        
+      - name: body
+        label: Content
+        required: false
+        hint: Page content
+        widget: markdown
+    filter:
+      field: layout
+      value: post
+  - name: advanced
+    label: Advanced Pages
+    folder: /content/
+    create: true
+    extension: md
+    identifier_field: title
+    slug: '{{slug}}'
+    fields:
+      - name: title
+        label: Title
+        required: true
+        hint: The title of the page
+        widget: string
+      - name: sections
+        label: Sections
+        required: false
+        hint: Page sections
+        widget: list
+        allow_add: false
+        types:
+          - name: blog_feed_section
+            widget: object
+            label: Blog Feed Section
+            fields:
+              - name: title
+                label: Title
+                required: false
+                hint: The title of the section
+                widget: string
+              - name: show_recent
+                widget: boolean
+                label: Show recent posts
+                required: true
+                default: false
+                hint: >-
+                  Show the specified number of recent posts. Should not be used
+                  with author and category filters.
+              - name: recent_count
+                widget: number
+                label: Number of recent posts to show
+                required: false
+                valueType: int
+              - name: author
+                widget: string                
+                label: Author Filter
+                required: false
+                hint: Filter posts by an author
+              - name: category
+                widget: string
+                label: Category Filter
+                required: false
+                hint: Filter posts by category
+              - name: type
+                widget: hidden
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: blog_feed_section
+          - name: contact_section
+            widget: object
+            label: Contact Section
+            fields:
+              - name: type
+                widget: hidden
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: contact_section
+          - name: content_section
+            widget: object
+            label: Content Section
+            fields:
+              - name: title
+                widget: string
+                label: Title
+                required: false
+                hint: The title of the section
+              - name: content
+                widget: markdown
+                label: Content
+                required: false
+                hint: The text content of the section
+              - name: type
+                widget: hidden
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: content_section
+          - name: cta_section
+            widget: object
+            label: CTA Section
+            fields:
+              - name: title
+                label: Title
+                required: false
+                hint: The title of the section
+                widget: string
+              - name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section
+                widget: string
+              - name: actions
+                label: Action Buttons
+                required: false
+                widget: list
+                fields:
+                  - name: label
+                    label: Label
+                    required: true
+                    widget: string
+                  - name: url
+                    label: URL
+                    required: true
+                    widget: string
+                  - name: style
+                    widget: select
+                    label: Style
+                    required: true
+                    default: link
+                    options:
+                      - link
+                      - primary
+                      - secondary
+                  - name: new_window
+                    widget: boolean
+                    label: Open in new tab/window
+                    required: false
+                    default: false
+                  - name: type
+                    widget: hidden
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - name: has_background
+                widget: boolean
+                label: Enable section background
+                required: false
+                default: false
+              - name: background_color
+                widget: select
+                label: Background Color
+                required: false
+                default: white
+                hint: The background color of the section
+                options:
+                  - white
+                  - gray
+                  - blue
+              - name: type
+                widget: hidden
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: cta_section
+          - name: features_section
+            widget: object
+            label: Features Section
+            fields:
+              - name: title
+                widget: string
+                label: Title
+                required: false
+                hint: The title of the section
+              - name: features
+                widget: list
+                label: Features
+                required: false
+                fields:
+                  - name: title
+                    widget: string
+                    label: Title
+                    required: false
+                    hint: The title of the feature
+                  - name: content
+                    widget: markdown
+                    label: Content
+                    required: false
+                    hint: The text content of the feature
+                  - name: align
+                    widget: select
+                    label: Align
+                    required: false
+                    default: left
+                    hint: The alignment of the text content
+                    options:
+                      - left
+                      - right
+                      - center
+                  - name: image
+                    widget: image
+                    label: Image
+                    required: false
+                    hint: The position of the image
+                  - name: image_position
+                    widget: select
+                    label: Image Position
+                    required: false
+                    default: left
+                    hint: The position of the image
+                    options:
+                      - left
+                      - right
+                  - name: actions
+                    widget: list
+                    label: Action Buttons
+                    required: false
+                    fields:
+                      - name: label
+                        widget: string
+                        label: Label
+                        required: true
+                      - name: url
+                        widget: string
+                        label: URL
+                        required: true
+                      - name: style
+                        widget: select
+                        label: Style
+                        required: true
+                        default: link
+                        options:
+                          - link
+                          - primary
+                          - secondary
+                      - name: new_window
+                        widget: boolean
+                        label: Open in new tab/window
+                        required: false
+                        default: false
+                      - name: type
+                        widget: hidden
+                        label: Object Type
+                        required: true
+                        hint: The type of the object
+                        default: action
+                  - name: type
+                    widget: hidden
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: feature
+              - name: type
+                widget: hidden
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: features_section
+          - name: hero_section
+            widget: object
+            label: Hero Section
+            fields:
+              - name: title
+                widget: string
+                label: Title
+                required: false
+                hint: The title of the section
+              - name: subtitle
+                widget: string
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section
+              - name: actions
+                widget: list
+                label: Action Buttons
+                required: false
+                fields:
+                  - name: label
+                    widget: string
+                    label: Label
+                    required: true
+                  - name: url
+                    widget: string
+                    label: URL
+                    required: true
+                  - name: style
+                    widget: select
+                    label: Style
+                    required: true
+                    default: link
+                    options:
+                      - link
+                      - primary
+                      - secondary
+                  - name: new_window
+                    widget: boolean
+                    label: Open in new tab/window
+                    required: false
+                    default: false
+                  - name: type
+                    widget: hidden
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - name: align
+                widget: select
+                label: Align
+                required: false
+                default: left
+                hint: The alignment of the text content
+                options:
+                  - left
+                  - right
+                  - center
+              - name: image
+                widget: image
+                label: Image
+                required: false
+                hint: The image of the section
+              - name: image_position
+                widget: select
+                label: Image Position
+                required: false
+                default: left
+                hint: The position of the image
+                options:
+                  - left
+                  - right
+              - name: has_background
+                widget: boolean
+                label: Enable section background
+                required: false
+                default: false
+              - name: background
+                widget: object
+                label: Background Configuration
+                required: false
+                fields:
+                  - name: background_color
+                    widget: select
+                    label: Background Color
+                    required: false
+                    default: white
+                    hint: The background color of the section
+                    options:
+                      - white
+                      - gray
+                      - blue
+                  - name: background_image
+                    widget: image
+                    label: Background Image
+                    required: false
+                    hint: The image displayed in the background of the section
+                  - name: background_image_opacity
+                    widget: number
+                    label: Background Image Opacity
+                    required: false
+                    hint: >-
+                      An integer between 0 and 100. A lower value makes the
+                      image more transparent.
+                    valueType: int
+                  - name: background_image_size
+                    widget: select
+                    label: Background Image Size
+                    required: false
+                    default: cover
+                    hint: The size of the background image
+                    options:
+                      - auto
+                      - contain
+                      - cover
+                  - name: background_image_repeat
+                    widget: select
+                    label: Background Image Repeat
+                    required: false
+                    default: no-repeat
+                    hint: Repeat the image to cover the whole area.
+                    options:
+                      - repeat
+                      - no-repeat
+              - name: type
+                widget: hidden
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: hero_section
+          - name: team_section
+            widget: object
+            label: Team Section
+            fields:
+              - name: title
+                widget: string
+                label: Title
+                required: false
+                hint: The title of the section
+              - name: team
+                widget: list
+                label: Team
+                required: false
+                field:
+                  label: String
+                  name: string
+                  widget: string
+              - name: type
+                widget: hidden
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: team_section
+      - name: layout
+        widget: hidden
+        label: Layout
+        required: true
+        default: advanced
+    filter:
+      field: layout
+      value: advanced
+  - name: "data"
+    label: "Databases"
+    files:   
+      - file: "/data/careers/vacancies.yml"
+        label: "Current Vacancies" 
+        name: "vacancies"
+        fields:
+          - name: title
+            label: "Vacancies Heading"
+            widget: string
+          - name: vacancies
+            label: Vacancies
+            widget: "list" 
+            fields:
+              - name: position
+                label: "The Position"
+                widget: "string"
+              - name: display
+                label: "Display"
+                hint: "true or false"
+                default: true
+                widget: "boolean"                
+              - name: countries
+                label: "Country" 
+                widget: "string"
+              - name: locations
+                label: Location
+                widget: "string"
+              - name: moreinfo
+                label: "Vacancy Info"
+                widget: "text"
+              - name: toapply
+                label: "Next Step Action"
+                hint: "To apply for the position please send your CV to jobs@sembcorp.com"
+                widget: "string"
+              - name: jobdetails
+                label: "Job Details Document"
+                hint: "URL to downloaad Job Details document"
+                widget: "string"
+      - file: "/data/resources/timeline.yml"
+        label: "Time Line Events"
+        name: "timeline"
+        fields:
+          - name: events
+            label: Events
+            widget: "list"
+            fields:
+              - label: Year
+                name: time
+                widget: "string"
+              - label: Description
+                name: text
+                widget: "string"
+              - label: Link
+                name: link
+                widget: "string"
+              - label: Link Text
+                name: linktext
+                widget: "string"                
+      - file: "/data/resources/resources.yml"
+        label: "Resources"
+        name: "resources"
+        fields:
+          - name: sections
+            label: "Resouce Groupings"
+            widget: list
+            fields:
+              - label: Section Title
+                name: title 
+                widget: "string"
+              - label: "Icon file name without file type"
+                name: icon 
+                widget: "string" 
+              - label: Resource Item
+                name: items
+                widget: "list"
+                fields:
+                  - label: "Icon file name without file type"
+                    name: icon
+                    widget: "string"
+                  - label: Resource Title
+                    name: title
+                    widget: "string" 
+                  - label: Resource longer description
+                    name: description
+                    widget: "string"
+                  - label: Url of link or Download
+                    name: url
+                    widget: "string"
+      - file: "/data/resources/connections.yml"
+        label: "Connections"
+        name: "seukfooter"
+        fields:
+          - name: sections
+            label: "Connections Groupings"
+            widget: list
+            fields:
+              - label: Section Title
+                name: title 
+                widget: "string"
+              - label: "Icon file name without file type"
+                name: icon 
+                widget: "string" 
+              - label: Connection Item
+                name: items
+                widget: "list"
+                fields:
+                  - label: "Icon file name without file type"
+                    name: icon
+                    widget: "string"
+                  - label: Connection Title
+                    name: title
+                    widget: "string" 
+                  - label: Connection longer description
+                    name: description
+                    widget: "string"
+                  - label: Url of link or Download
+                    name: url
+                    widget: "string"                    
+      - file: "/data/resources/policiesandconditions.yml"
+        label: "Policies and Conditions"
+        name:  "PoliciesandConditions"
+        fields:
+          - label: Page Title
+            name: title 
+            widget: "string"
+          - label: "Icon file name without file type"
+            name: icon 
+            widget: "string" 
+          - label: Resource Item
+            name: items
+            widget: "list"
+            fields:
+              - label: Policy/Condition
+                name: title
+                widget: "string"             
+              - label: "Icon file name without file type"
+                name: icon
+                widget: "string"
+              - label: Longer description
+                name: description
+                widget: "string"
+              - label: Url of link or Download
+                name: url
+                widget: "string"

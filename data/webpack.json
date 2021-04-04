@@ -1,0 +1,13 @@
+{
+  "cms": {
+    "js": "cms.3212d.js"
+  },
+  "main": {
+    "js": "main.3212d.js"
+  },
+  "": {
+    "html": "admin/index.html",
+    "txt": "cms.3212d.js.LICENSE.txt",
+    "keep": "fonts/.keep"
+  }
+}

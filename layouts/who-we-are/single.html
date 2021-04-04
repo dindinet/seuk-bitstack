@@ -1,0 +1,32 @@
+{{ define "content" }}
+
+<section class="section hero bg-image dind-section--padding">
+  <div class="bg-image__image" style="background-image: url('{{ replace .Params.heroimg "upload/" "upload/w_1665,q_auto,f_auto/" }}'); opacity: 1; background-size: cover; background-repeat: no-repeat"></div>
+  <div class="container container--lg">
+     <div class="flex flex--middle flex--center flex--col-2">
+       <div class="hero-heading">
+        <h1>{{ .Params.title }}</h1>
+       </div>
+
+     </div>
+  </div>
+</section>
+
+<article class="page">
+  <section class="section section--weare">
+  <div class="container container--lg">
+  <div class="flex xflex--middle flex--center flex--col-2">
+    <div class="section__body cell">
+      <div class="section__copy">
+        {{ .Content }}
+      </div>
+    </div>
+    <div class="cell">
+      {{ partial "seuk_timeline.html" . }}
+    </div>
+  </div>
+</div>
+</section>
+</article>
+
+{{ end }}

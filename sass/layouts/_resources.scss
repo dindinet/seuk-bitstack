@@ -1,0 +1,23 @@
+.section--resources{color: white; background-color: $color-se-pastel-green; font-size: 16px;}
+.section--resources h2, .section--resources h5{color: white;display:block;margin-top: 0.25rem;}
+.section--resources td{min-height: 140px;}
+.capitalized{text-transform: capitalize;}
+.allcaps{text-transform:uppercase;}
+img.icon24{width: 24px; max-width: none;}
+img.icon35{height: 35px; max-width: none;}
+.section--resources table{border: none;}
+.section--resources td{border: none;}
+.resourcegridoriginal{display: grid; grid-template-columns: 80px 1fr;}
+.resourcegridoriginal a{color: white;}
+.resourcegridicon{justify-self:right;padding-right:4px;}
+.resourcegridtext{justify-self:left;}
+
+.section--seukfooter{color: white; background-color: #717074; font-size: 16px;}
+.section--seukfooter h2, .section--seukfooter h5{color: white;display:block;margin-top: 0.25rem;}
+.section--seukfooter td{min-height: 140px;}
+.capitalized{text-transform: capitalize;}
+.allcaps{text-transform:uppercase;}
+img.icon24{width: 24px; max-width: none;}
+img.icon35{height: 35px; max-width: none;}
+.section--seukfooter table{border: none;}
+.section--seukfooter td{border: none;}

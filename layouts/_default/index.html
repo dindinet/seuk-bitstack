@@ -1,0 +1,121 @@
+{{ define "content" }}
+<main id="content" class="site-content">
+   <section class="section hero bg-image dind-section--padding">
+      <div class="bg-image__image" style="background-image: url('{{ replace .Params.hero.heroimg "upload/" "upload/w_1665,q_auto,f_auto/" }}'); opacity: 1; background-size: cover; background-repeat: no-repeat"></div>
+      <div class="container container--lg">
+         <div class="flex flex--middle flex--center flex--col-2">
+            <div class="cell section__body">
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="section section--valprop">
+      <div class="container container--fw">
+         <div class="section__body align-center inverse valprop">
+            <div class="container container--lg">
+               <p class="section__title">{{ .Params.hero.valprop }}</p>
+               <div class="section__actions btn-group">
+                  <a class="btn" href="{{ .Params.hero.learnmore}}">Learn More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="section section--offer">
+    <div class="container container--md align-center">
+       <h2 class="section__title">Sembcorp Energy UK</h2>
+    </div>
+    <div class="container container--lg">
+       <div class="flex flex--col-3">
+        {{ range .Params.seukoffercards }}
+          <article class="cell offer">
+          <a class="card__media card__media--top" href="{{ .url }}">
+             <div class="card {{ .title }}">
+                <img src="{{ replace .photo "upload/" "upload/h_200,ar_16:9,c_fill,q_auto,f_auto/" }}" alt="Sembcorp is a World Leader in Renewable Energy Generation">                
+                        <header class="card__header">
+                            <h3 class="h4 card__title align-left"><a href="{{ .url }}">{{ .title}}</a></h3>
+                        </header>                
+                <div class="overlay">
+                    <div class="card__body">                       
+                                <p>{{ .blurb }}</p>
+                                <a class="btn" href="{{ .url }}">Learn More</a>                       
+                    </div>
+                </div>               
+             </div>
+          </a>
+          </article>
+        {{ end }}
+       </div>
+    </div>
+ </section>
+   <section class="section section--posts" style="background-image:url(https://res.cloudinary.com/seuk/image/upload/o_11,e_grayscale/v1599057459/flexible-distributed-generation.jpg); opacity: 1; background-size: cover; background-repeat: no-repeat;">
+      <div class="container container--md align-center">
+         <h2 class="section__title">Latest News &amp; Insights</h2>
+      </div>
+      <div class="container container--lg" >
+         <div class="flex flex--col-3">
+            
+            {{ range first 3 (where .Site.Pages "Section" "blog") }}
+            <article class="cell">
+               <div class="card postcard">
+                  <a class="card__media card__media--top" href="{{.Permalink}}">
+                  <img src="{{ replace .Params.image "upload/" "upload/h_200,ar_16:9,c_fill,q_auto,f_auto/" }}" alt="{{.Params.title}}">
+                  
+                  </a>
+                  <div class="card__body">
+                     <header class="card__header">
+                        <div class="card__meta">
+                           
+                           {{ if .Params.categories }}
+                           {{ $include_dict := dict "categories" .Params.categories "container_class" "post__meta" }}
+                           {{ partial "blog_post_categories.html" $include_dict }}
+                         {{ end }}
+                        </div>
+                        <h3 class="h4 card__title"><a href="{{.Permalink}}">{{.Params.title}}</a></h3>
+                     </header>
+                     <div class="card__copy">
+                        <p>{{ .Summary | safeHTML | truncate 120 }} <a href="{{.Permalink}}">Read Article</a></p>
+                        
+                     </div>
+                     <footer class="card__footer">
+                        <div class="post__meta">
+                            <span>Posted on <time datetime="{{ .Date | dateFormat "2006-01-02 15:04" }}">{{ .Date | dateFormat "January 02, 2006" }}</time></span>
+                            {{ if .Params.author }}
+                            {{ $thisauthor := .Params.author|urlize }}
+                            {{ $path := printf "data/team/%s.json" $thisauthor }}
+                            {{ $author := getJSON $path}}
+                            {{ if $author.link }}
+                              <span> by <a href="{{ $author.link | relURL }}">{{ $author.first_name }} {{ $author.last_name }}</a></span>
+                            {{ else }}
+                              <span> by {{ $author.first_name }} {{ $author.last_name }}</span>
+                            {{ end }}
+                          {{ end }}
+                          </div>             
+                     </footer>
+                  </div>
+               </div>
+            </article>
+            {{ end }}
+
+         </div>
+      </div>
+   </section>
+
+   
+ <!--  <section class="section section--cta">
+      <div class="container container--fw">
+         <div class="section__body align-center inverse bg-blue">
+            <div class="container container--lg">
+               <h4 class="section__title">{{ .Params.cta.ctatext }}</h4>
+               {{ if .Params.cta.actions }}
+               <div class="section__actions btn-group">
+                 {{ $include_dict := dict "actions" .Params.cta.actions }}
+                 {{ partial "section_actions.html" $include_dict }}
+               </div>
+               {{ end }}
+            </div>
+         </div>
+      </div>
+   </section> -->
+</main>
+{{ end }}

@@ -1,0 +1,7 @@
+/*
+ Content-Security-Policy: script-src 'self' 'strict-dynamic' 'nonce-quasidolphineggcupelectricity' 'unsafe-inline' http: https:;object-src 'none';base-uri 'none';img-src 'self' cloudfront.net res.cloudinary.com www.google-analytics.com www.google-analytics.com stats.g.doubleclick.net; style-src 'self' 'unsafe-inline' tagmanager.google.com/ fonts.googleapis.com/; connect-src 'self' europe-west2-xousian.cloudfunctions.net www.google-analytics.com www.google-analytics.com stats.g.doubleclick.net;report-uri https://seuk-dev.netlify.app;
+ Permissions-Policy: fullscreen=(self), geolocation=(), camera=()
+ X-Frame-Options: DENY
+ X-XSS-Protection: 1; mode=block
+ Referrer-Policy: no-referrer
+ X-Content-Type-Options: nosniff

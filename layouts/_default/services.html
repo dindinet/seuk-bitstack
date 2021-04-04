@@ -1,0 +1,36 @@
+{{ define "content" }}
+<section class="section hero bg-image dind-section--padding">
+  <div class="bg-image__image" style="background-image: url('{{ replace .Params.heroimg "upload/" "upload/w_1665,q_auto,f_auto/" }}'); opacity: 1; background-size: cover; background-repeat: no-repeat"></div>
+  <div class="container container--lg">
+     <div class="flex flex--middle flex--center flex--col-2">
+      <div class="hero-heading">
+        <h1>{{ .Params.title }}</h1>
+       </div>
+     </div>
+  </div>
+</section>
+<article class="page">
+<section class="section section--features">
+  <div class="container container--lg">
+
+  {{range $i, $element := .Params.services}}
+    <div class="flex flex--middle flex--center flex--col-2">
+      <div class="cell section__media {{if (modBool $i 2)}}section__media--right {{ end }}">
+        <img src="{{ .photo }}" alt="{{ .photo_alt }}"/>
+      </div>
+      <div class="section__body cell">   
+          <h2 class="section__title">{{ .heading }}</h2>
+        <div class="section__copy">
+          <p>{{ .text }}</p>
+        </div>    
+        <div class="section__actions btn-group">
+          <a class="btn" href="{{ .link }}" {{ if in .link "http" }}target="_blank"{{ end }}>{{ .linktext }}</a>
+        </div>   
+      </div>
+    </div>
+{{ end }}
+  </div>
+</section>
+</article>
+
+{{ end }}

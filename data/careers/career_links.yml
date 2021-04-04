@@ -1,0 +1,25 @@
+careerlinksintro: >-
+        Find out more about career opportunities with Sembcorp Energy UK:
+contactmessage: If you’re interested in joining us at Sembcorp Energy UK, please contact us or send us your CV and covering email to 
+contactemail: jobs@sembcorp.com 
+careerlinks:
+   - title: Careers
+     text:
+     linktext: Learn More
+     url: /careers
+   - title: Available Jobs
+     text:
+     linktext: Learn More
+     url: /available-jobs
+   - title: Graduates
+     text:
+     linktext: Learn More
+     url: /graduates
+   - title: Apprenticeships
+     text:
+     linktext: Learn More
+     url: /apprenticeships
+   - title: Work Experience
+     text:
+     linktext: Learn More
+     url: /work-experience               

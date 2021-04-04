@@ -1,0 +1,30 @@
+<section class="section section--seukavailablejobs" >
+    <div class="container container--lg" >
+        <p class="h3">{{ .Site.Data.careers.vacancies.title }}</p>        
+        <div class="flex flex--col-2">
+            {{ range where .Site.Data.careers.vacancies.vacancies ".display" true }}
+            <article class="cell align-left">
+              <div class="card vacancy careercard">
+               <div class="card__body">  
+                   <header class="card__header">
+                      <h3 class="h3 card__title align-left">{{ .position }}</h3>
+                   </header>   
+                <div class="card__copy">
+                    <p> 
+                        {{ .moreinfo }} </br>
+                        <!--Countries: {{ .countries }}<br/>-->
+                        Location: {{ .locations }}<br/>
+                    {{ if .pdf}}
+                   <a href="https://www.sembcorpenergy.co.uk/{{ .pdf }}" target="_blank">Download Job Description</a>
+                   {{ else }}
+                    <a href="https://www.sembcorpenergy.co.uk/{{ replace .jobdetails "https://www.sembcorpenergy.co.uk/" ""}}" target="_blank">Download Job Description</a></p>
+                   {{ end }}
+                    <!--<p>{{ .toapply | markdownify }}</p>-->
+                </div>
+               </div>
+              </div>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>

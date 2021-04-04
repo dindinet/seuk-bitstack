@@ -1,0 +1,57 @@
+sections:
+  - title: Governance & Culture
+    icon: corporate-governance-w
+    items:
+      - icon: download-w
+        title: Sustainability Framework
+        description: Our commitment to running a responsible, sustainable business.
+        url: sembcorp-sustainability-framework.pdf
+        download: pdfs/sembcorp-sustainability-framework.pdf
+      - icon: link-w
+        title: Reports & Policies
+        description: null
+        url: /reports-and-policies
+      - icon: download-w
+        title: Anti-Slavery & Human Trafficking Policy
+        description: Sembcorp has a zero tollerance to Slavery and Human Trafficking
+        url: seuk-anti-slavery-annual-statement-final-signed.pdf
+        download: pdfs/seuk-anti-slavery-annual-statement-final-signed.pdf
+      - title: Theft Charter
+        icon: download-w
+        url: Theft Charter.pdf
+        download: pdfs/Theft Charter.pdf
+  - title: People & Careers
+    icon: employees-w
+    items:
+      - icon: link-w
+        title: Current Vacancies
+        description: Our notice board for career opportunities with us.
+        url: /available-jobs
+      - icon: download-w
+        title: Vision and Values
+        description: What we do and the values that guide our actions.
+        url: sembcorp-our-vision-and-values.pdf
+        download: pdfs/sembcorp-our-vision-and-values.pdf
+      - icon: download-w
+        title: "Fair Processing: Jobs & Applications"
+        description: For a fair recruitment process.
+        url: sembcorp-fair-processing-notice-for-job-apps.pdf
+        download: pdfs/sembcorp-fair-processing-notice-for-job-apps.pdf
+  - title: Data & Privacy
+    icon: cybersecurity-w
+    items:
+      - icon: download-w
+        title: Privacy & Personal Data Protection
+        description: null
+        url: privacy-and-personal-data-protection-policy-oct-2019-external-use.pdf
+        download: pdfs/privacy-and-personal-data-protection-policy-oct-2019-external-use.pdf
+      - icon: download-w
+        title: Surveillance Systems Code of Practice
+        description: Responsible surveillance practices.
+        url: surveillance-systems-code-of-practice-oct-2019-external-use.pdf
+        download: pdfs/surveillance-systems-code-of-practice-oct-2019-external-use.pdf
+      - icon: download-w
+        title: Cookie Policy
+        description: How we use cookies on our website.
+        url: cookie-policy-oct-2019.pdf
+        download: pdfs/cookie-policy-oct-2019.pdf

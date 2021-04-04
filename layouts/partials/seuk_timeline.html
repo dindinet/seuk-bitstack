@@ -1,0 +1,24 @@
+ <section class="section section--timeline" >
+       <div class="container container--md align-center">
+          <h2 class="section__title">Our Timeline</h2>
+       </div>
+       <div class="container container--lg" >                   
+             <article class="xcell"> 
+                <div class="timeline">
+                    {{ range $i, $element := sort $.Site.Data.resources.timeline.events "time" "desc"}}
+                   <div class="tlcontainer {{if (modBool $i 2)}}right{{ else }}left{{ end }}">
+                     <div class="tlcontent">
+                       <h6 class="date">{{ .time }}</h6>
+                       {{ .text }}
+                     </div>
+                   </div>
+                   {{ end }}
+                 </div>
+             </article>
+
+ 
+          
+       </div>
+    </section>
+ 
+ 

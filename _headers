@@ -1,0 +1,7 @@
+/*
+ Content-Security-Policy: frame-src www.youtube.com; img-src 'self' res.cloudinary.com; media-src www.youtube.com; script-src 'self' *.googletagmanager.com www.youtube.com cdn.jsdelivr.net *.ytimg.com
+ Permissions-Policy: fullscreen=(self), geolocation=(), camera=()
+ X-Frame-Options: DENY
+ X-XSS-Protection: 1; mode=block
+ Referrer-Policy: no-referrer
+ X-Content-Type-Options: nosniff
