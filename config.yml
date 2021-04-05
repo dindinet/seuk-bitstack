@@ -1,0 +1,632 @@
+backend:
+  name: github
+  repo: dindinet/seuk-bitstack
+  branch: master
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: seuk
+    api_key: 873885784827685
+    username: sembcorpenergyuk@gmail.com
+    multiple: false
+publish_mode: editorial_workflow
+logo_url: https://res.cloudinary.com/seuk/image/upload/v1596707201/sembcorp-logo.svg
+#media_folder: site/static/images
+#public_folder: /images 
+collections:
+  - name: page
+    label: SEUK Offer Pages
+    files:
+      - file: "content/_index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - label: Title
+            name: title
+            required: true
+            hint: The title of the page
+            widget: string
+          - label: SEO Description
+            name: description            
+            required: false
+            hint: The title of the page
+            widget: string
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - label: Hero Image
+                name: heroimg
+                required: true
+                widget: image
+                hint: The image at the top of the page
+              - label: Value Proposition
+                name: valprop
+                required: true
+                widget: string
+                hint: Sembcorp Energy UK value Proposition
+              - label: Learn More Link
+                name: learnmore
+                required: true
+                widget: string
+                hint: url of page to Learn More                
+          - label: SEUK Offer Cards
+            name: seukoffercards
+            widget: list
+            fields:
+              - label: Card Title
+                name: title
+                required: true
+                widget: string
+              - label: Card links to
+                name: url
+                required: true
+                widget: string
+              - label: Image for card
+                name: photo
+                required: true
+                widget: image
+              - label: Card text
+                name: blurb
+                required: true
+                widget: string                
+      - file: "content/who-we-are/index.md"
+        label: "Who We Are Page"
+        name: "whoweare"
+        fields:
+          - label: Title
+            name: title
+            required: true
+            hint: The title of the page
+            widget: string 
+          - label: SEO Description
+            name: description            
+            required: false
+            hint: The title of the page
+            widget: string
+          - label: Hero Image
+            name: heroimg            
+            required: true
+            hint: The image at the top of the page
+            widget: image
+          - label: Type
+            name: type
+            required: true
+            default: who-we-are
+            widget: hidden
+          - name: body
+            label: Content
+            required: false
+            hint: Page content
+            widget: markdown
+      - file: "content/what-we-do/index.md"
+        label: "What We Do Page"
+        name: "whatwedo"
+        fields:
+          - label: Title
+            name: title
+            required: true
+            hint: The title of the page
+            widget: string
+          - label: SEO Description
+            name: description            
+            required: false
+            hint: The title of the page
+            widget: string
+          - label: Hero Image
+            name: heroimg            
+            required: true
+            hint: The image at the top of the page
+            widget: image
+          - label: Page Intro
+            name: intro            
+            required: true
+            hint: Highlighted Intro Paragraph
+            widget: text          
+          - label: Type
+            name: type
+            required: true
+            default: what-we-do
+            widget: hidden
+          - label: We do
+            name: wedo
+            widget: list
+            fields:
+              - label: Heading
+                name: heading
+                required: true
+                widget: string
+              - label: We do description
+                name: text
+                required: true
+                widget: text
+              - label: We do Image
+                name: photo
+                required: true
+                widget: image
+              - label: Alternative text(Not compulsory)
+                hint:  Alternative text for We do Image seen by screen readers ans search engines
+                name: photo_alt
+                required: false
+                widget: string 
+              - label: We do Link(Not compulsory)
+                hint:  Where to send visitors
+                name: link
+                required: false
+                widget: string
+              - label: We do Link Text(Not compulsory)
+                hint:  Text for Green Button
+                name: linktext
+                required: false
+                widget: string                
+          - label: Call to Action Text
+            name: ctaText
+            widget: string 
+          - label: Call to Action Link
+            name: ctaLink
+            widget: string                 
+      - file: "content/services/index.md"
+        label: "Services Page"
+        name: "Services"
+        fields:
+          - label: Title
+            name: title
+            required: true
+            hint: The title of the page
+            widget: string
+          - label: SEO Description
+            name: description            
+            required: false
+            hint: The title of the page
+            widget: string
+          - label: Hero Image
+            name: heroimg            
+            required: true
+            hint: The image at the top of the page
+            widget: image
+          - label: Layout
+            name: layout
+            required: true
+            default: services
+            widget: hidden
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - label: Heading
+                name: heading
+                required: true
+                widget: string
+              - label: Service description
+                name: text
+                required: true
+                widget: text
+              - label: Service Image
+                name: photo
+                required: true
+                widget: image
+              - label: Alternative text(Not compulsory)
+                hint:  Alternative text for We do Image seen by screen readers ans search engines
+                name: photo_alt
+                required: false
+                widget: string 
+              - label: Service Link
+                hint:  Where to send visitors
+                name: link
+                required: true
+                widget: string 
+              - label: Service Link Text
+                hint:  Text to use for link
+                name: linktext
+                required: true
+                widget: string                                                                                
+  - name: careers
+    label: Careers Pages
+    files:
+      - file: "content/careers/index.md"
+        label: "Careers Page"
+        name: "careers"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}        
+      - file: "content/apprenticeships/index.md"
+        label: "Apprenticeships Page"
+        name: "apprenticeships"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/available-jobs/index.md"
+        label: "Available Jobs Page"
+        name: "availablejobs"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown} 
+      - file: "content/graduates/index.md"
+        label: "Graduates Page"
+        name: "graduates"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/work-experience/index.md"
+        label: "Work Experience Page"
+        name: "WorkExperience"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "/data/careers/career_links.yml"
+        label: "Careers Navigation Cards"
+        name: "CareersCards"
+        fields:
+          - name: careerlinksintro
+            label: Intro text
+            required: true
+            widget: string        
+          - name: contactmessage
+            label: Message for CTA
+            required: true
+            hint: >-
+                 e.g. To learn more about careers with Sembcoorp Energy contact us by email:
+            widget: string
+          - name: contactemail
+            label: Contact email address for CTA
+            required: true
+            widget: string
+          - name: careerlinks
+            label: Cards
+            widget: "list"
+            fields:
+              - label: Card Title
+                name: title
+                widget: "string"
+              - label: Description
+                name: text
+                widget: "string"
+              - label: Link Text
+                name: linktext
+                widget: "string"
+              - label: Link URL
+                name: url
+                widget: "string"            
+  - name: sustainability
+    label: Sustainability Pages
+    files:
+      - file: "content/sustainability/index.md"
+        label: "Sustainability Page"
+        name: "sustainabiity"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/embedding-responsible-business-practices/index.md"
+        label: "Embedding responsible Business Practices Page"
+        name: "ResponsibleBusiness"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/empowering-our-people-and-communities/index.md"
+        label: "Empowering our People and Communities Page"
+        name: "PeopleandCommunities"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/enabling-a-low-carbon-and-circular-economy/index.md"
+        label: "Enabling a Low Carbon-and Circular Economy Page"
+        name: LowCarbonCircularEconomy
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}
+      - file: "content/community-activities/index.md"
+        label: "Community Activities Page"
+        name: CommunityActivities
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description(SEO)", name: "description", widget: "text"}
+          - {label: "Hero Image", name: "heroimg", widget: "image"}
+          - {label: "Layout", name: "layout", default: sustainability ,widget: "hidden", required: true}
+          - {name: body, label: Content, required: false, hint: Page content, widget: markdown}                   
+      - file: "/data/sustainability/sustainability_links.yml"
+        label: "Sustainability Navigation Cards"
+        name: "SustainabilityCards"
+        fields:
+          - name: intro
+            label: Intro text
+            required: true
+            widget: string        
+          - name: contactmessage
+            label: Message for CTA
+            required: true
+            hint: >-
+                 e.g. To learn more about sustainability contact us by email:
+            widget: string
+          - name: contactemail
+            label: Contact email address for CTA
+            required: true
+            widget: string
+          - name: sustainabilitylinks
+            label: Cards
+            widget: "list"
+            fields:
+              - label: Card Title
+                name: title
+                widget: "string"
+              - label: Description
+                name: text
+                widget: "string"
+              - label: Link Text
+                name: linktext
+                widget: "string"
+              - label: Link URL
+                name: url
+                widget: "string"
+  - name: post
+    label: News & Insights
+    folder: /content/blog
+    create: true
+    extension: md
+    identifier_field: title
+    slug: '{{slug}}'
+    fields:
+      - label: Title
+        name: title
+        required: true
+        hint: The title of the post
+        widget: string
+      - label: Date
+        name: date
+        required: true
+        hint: The publish date of the post
+        widget: date
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "person"
+        searchFields: ["id"]
+        displayFields: ["id"]
+        valueField: "id"
+      - name: categories
+        label: Categories
+        required: false
+        hint: The categories of the post
+        widget: select
+        multiple: true
+        options:
+          - { label: "Sustainable Solutions", value: "sustainable_solutions" }
+          - { label: "Energy Generation", value: "energy_generation" }
+          - { label: "Community", value: "community" }
+          - { label: "Battery Storage", value: "battery_storage" }
+          - { label: "Grid Stability", value: "grid_stability" }       
+      - name: tags
+        label: Tags
+        required: false
+        hint: The tags of the post
+        widget: list
+        field:
+          label: String
+          name: string
+          widget: string
+      - name: image
+        label: Featured Image
+        required: false
+        hint: The image shown in the blog post and blog feed
+        widget: image
+      - name: description
+        label: SEO Description
+        required: false
+        hint: The excerpt of the page displayed in the blog feed and meta data
+        widget: string
+      - name: layout
+        label: Layout
+        required: true
+        default: post
+        widget: hidden
+      - name: type
+        label: Type
+        required: true
+        default: post
+        widget: hidden        
+      - name: body
+        label: Content
+        required: false
+        hint: Page content
+        widget: markdown
+    filter:
+      field: layout
+      value: post
+  - name: person
+    label: Authors
+    folder: /data/team
+    format: json
+    extension: json    
+    create: true
+    identifier_field: id
+    slug: '{{slug}}'
+    fields:
+      - name: id
+        label: ID
+        required: true
+        hint: 'A unique identifier used when filtering posts, e.g. "john-doe"'
+        widget: string
+      - name: link
+        label: Link
+        required: false
+        hint: 'The link to the author page, e.g. "blog/author/john-doe"'
+        widget: string
+      - name: first_name
+        label: First Name
+        required: true
+        widget: string
+      - name: last_name
+        label: Last Name
+        required: false
+        widget: string
+      - name: photo
+        label: Photo
+        required: false
+        widget: image
+      - name: bio
+        label: Bio
+        required: false
+        widget: markdown
+      - name: type
+        label: Object Type
+        required: true
+        hint: The type of the object
+        default: person
+        widget: hidden
+  - name: "data"
+    label: "Data Collections"
+    files:   
+      - file: "/data/careers/vacancies.yml"
+        label: "Current Vacancies" 
+        name: "vacancies"
+        fields:
+          - name: title
+            label: "Vacancies Heading"
+            widget: string
+          - name: vacancies
+            label: Vacancies
+            widget: "list" 
+            fields:
+              - name: display
+                label: "Display"
+                hint: "true or false"
+                default: true
+                widget: "boolean"               
+              - name: position
+                label: "The Position"
+                widget: "string"              
+              - name: countries
+                label: "Country" 
+                widget: "string"
+              - name: locations
+                label: Location
+                widget: "string"
+              - name: moreinfo
+                label: "Vacancy Info"
+                widget: "text"
+              - name: toapply
+                label: "Next Step Action"
+                hint: "To apply for the position please send your CV to jobs@sembcorp.com"
+                widget: "string"
+              - name: jobdetails
+                label: "Job Details Document"
+                hint: "URL to downloaad Job Details document"
+                widget: "string"
+      - file: "/data/resources/timeline.yml"
+        label: "Time Line Events"
+        name: "timeline"
+        fields:
+          - name: events
+            label: Events
+            widget: "list"
+            fields:
+              - label: Year
+                name: time
+                widget: "string"
+              - label: Description
+                name: text
+                widget: "string"
+              - label: Link
+                name: link
+                widget: "string"
+                required: false
+              - label: Link Text
+                name: linktext
+                widget: "string"
+                required: false                
+      - file: "/data/resources/resources.yml"
+        label: "Resources"
+        name: "resources"
+        fields:
+          - name: sections
+            label: "Resouce Groupings"
+            widget: list
+            fields:
+              - label: Section Title
+                name: title 
+                widget: "string"
+              - label: "Icon file name without file type"
+                name: icon 
+                widget: "string" 
+              - label: Resource Item
+                name: items
+                widget: "list"
+                fields:
+                  - label: Resource Title
+                    name: title
+                    widget: "string"
+                  - label: "Icon file name without file type"
+                    name: icon
+                    widget: "select"
+                    options: ["download-w", "link-w"]                     
+                  - label: Url of link or Download
+                    name: url
+                    widget: "string"
+      - file: "/data/resources/connections.yml"
+        label: "Connections"
+        name: "seukfooter"
+        fields:
+          - name: sections
+            label: "Connections Groupings"
+            widget: list
+            fields:
+              - label: Section Title
+                name: title 
+                widget: "string"
+              - label: "Icon file name without file type"
+                name: icon 
+                widget: "string" 
+              - label: Connection Item
+                name: items
+                widget: "list"
+                fields:
+                  - label: Connection Title
+                    name: title
+                    widget: "string"
+                  - label: "Icon file name without file type"
+                    name: icon
+                    widget: "select"
+                    options: ["download-w", "link-w"]                    
+                  - label: Url of link or Download
+                    name: url
+                    widget: "string"                    
+      - file: "/data/resources/policiesandconditions.yml"
+        label: "Policies and Conditions"
+        name:  "PoliciesandConditions"
+        fields:
+          - label: Resource Item
+            name: items
+            widget: "list"
+            fields:
+              - label: Report or Policy name
+                name: title
+                widget: "string"             
+              - label: Url of link or Url of Download
+                name: url
+                widget: "string"
